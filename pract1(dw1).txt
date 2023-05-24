@@ -1,0 +1,68 @@
+import  numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+weather = pd.read_csv("weatherAUS.csv")
+
+weather.head()
+
+weather.head(3)
+
+weather.info()
+
+weather.describe(include = 'all')
+
+print(weather.median())
+
+print(weather.std())
+
+weather.shape
+
+weather.tail(5)
+
+weather.index
+
+weather.columns
+
+weather.dtypes
+
+weather.columns.values
+
+weather['Location']
+
+weather.iloc[5]
+
+weather[0:3]
+
+weather.iloc[:,:5]
+
+weather.dtypes
+
+weather.sort_index(axis=1, ascending=False)
+
+weather.sort_values(by='Location')
+
+weather.iloc[50:150:5]
+
+weather.iloc[:5, :10]
+
+weather.iloc[3:5, 0:2]
+
+weather.iloc[[1,2,4],[0,2]]
+
+weather.iloc[1:3,:]
+
+weather.iloc[:,1:3]
+
+weather.iloc[1,1]
+
+weather['Rainfall'].iloc[5]
+
+cols_2_4=weather.columns[2:4]
+weather[cols_2_4]
+
+weather[weather.columns[2:4]].iloc[5:10]
+
+weather['RISK_MM']=weather['RISK_MM'].astype("int")
+weather.isnull().sum()

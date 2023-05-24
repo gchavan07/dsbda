@@ -1,0 +1,29 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df = pd.read_csv("StudentPerformance.csv")
+df
+
+df.isnull()
+
+series = pd.isnull(df["Maths Score"])
+df[series]
+
+from sklearn.preprocessing import LabelEncoder
+le = LabelEncoder()
+df['Gender'] = le.fit_transform(df['Gender'])
+newdf=df
+df
+
+missing_values = ["Na", "na"]
+df = pd.read_csv("StudentPerformance.csv", na_values =
+missing_values)
+df
+
+ndf=df
+ndf.fillna(0)
+
+col = ['Maths Score', 'Reading Score' , 'Writing Score','Placement Score']
+df.boxplot(col)
